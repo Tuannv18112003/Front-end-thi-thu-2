@@ -1,0 +1,27 @@
+<h2>Danh sách tác giả</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Họ tên</th>
+            <th scope="col">Giới tính</th>
+            <th scope="col">Địa chỉ</th>
+            <th scope="col">Tuổi</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="list in listAuthor">
+            <th scope="row">{{list.id}}</th>
+            <td>{{list.name}}</td>
+            <td>{{list.gender}}</td>
+            <td>{{list.address}}</td>
+            <td>{{list.age}}</td>
+            <td>
+                <button type="button" ng-click="onEdit(list.id)" class="btn btn-warning">Sửa</button>
+                <button type="button" ng-click="onDelte(list.id)" class="btn btn-danger">Xóa</button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>

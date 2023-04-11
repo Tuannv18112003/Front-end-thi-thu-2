@@ -1,0 +1,58 @@
+<h2 class="text-center">Quản lý tác giả</h2>
+<form action="" novalidate name="formAuthor">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Họ tên</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" 
+        placeholder=""
+        ng-model="inputValue.name"
+        name="name"
+        required>
+        <div ng-show="formAuthor.$submitted || formAuthor.name.$dirty || formAuthor.name.$touched">
+            <p ng-show="formAuthor.name.$error.required" class="text-danger">Bạn phải điền vào trường này</p>
+            <!-- <p ng-show="formAuthor.name.$error.pattern" class="text-danger">Bạn không được điền số hoặc kí tự đặc biệt</p> -->
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label d-block">Giới tính</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Nam" ng-model="inputValue.gender" required>
+            <label class="form-check-label" for="inlineRadio1">Nam</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" value="Nữ" id="inlineRadio2" ng-model="inputValue.gender" required>
+            <label class="form-check-label" for="inlineRadio2">Nữ</label>
+        </div>
+        <div ng-show="formAuthor.$submitted || formAuthor.gender.$touched">
+            <p ng-show="formAuthor.gender.$error.required" class="text-danger">Bạn phải điền vào trường này</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Địa chỉ</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder=""
+        ng-model="inputValue.address"
+        name="address"
+        required>
+        <div ng-show="formAuthor.$submitted || formAuthor.address.$dirty || formAuthor.address.$touched">
+            <p ng-show="formAuthor.address.$error.required" class="text-danger">Bạn phải điền vào trường này</p>
+            <!-- <p ng-show="formAuthor.address.$error.pattern" class="text-danger">Bạn không được điền số hoặc kí tự đặc biệt</p> -->
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Tuổi</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" 
+        ng-model="inputValue.age"
+        name="age"
+        ng-pattern="/^[0-9]{1,}$/" 
+        required>
+        <div ng-show="formAuthor.$submitted || formAuthor.age.$dirty || formAuthor.age.$touched">
+            <p ng-show="formAuthor.age.$error.required" class="text-danger">Bạn phải điền vào trường này</p>
+            <p ng-show="formAuthor.age.$error.pattern" class="text-danger">Bạn không được điền chữ hoặc kí tự đặc biệt</p>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button type="button" ng-click="formSubmit()" class="btn btn-success">Thêm</button>
+    </div>
+</form>
